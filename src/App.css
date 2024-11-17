@@ -1,42 +1,91 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background: rgba(33,33,33,.9);
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.navigation{
+    margin:1rem;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+#chatgpt-logo{
+    display: block;
+    color:#b4b4b4;
+    font-weight: bold;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.chat-container {
+    max-width: 600px;
+    margin: 50px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.chat-container .chat {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
   }
-  to {
-    transform: rotate(360deg);
+  .chat.user {
+    background-color: #e6f7ff;
+    align-self: flex-end;
+    color: #007bff;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .chat.bot {
+    background-color: #f1f0f0;
+    align-self: flex-start;
+    color: #333333;
   }
+  .chat-input {
+    display: flex;
+    padding: 10px;
+    background: #333333;  
+    align-items: center; 
+    gap: 1rem; 
+  }
+.chat-input input{
+    flex: 1;
+    padding: 10px;
+    border: none;
+    font-size: 14px;
+    border-radius: 1rem;
+    color:#ddd;
+    background-color: rgba(33,33,33,.3);
 }
+.chat-input input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+.chat-input button{
+    cursor: pointer;
+    background: #b4b4b4;
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.75rem;
+}
+.chat-input button:hover{
+    background: #a4a4a4;
+}
+.chat-input button:disabled {
+    background-color: #555555;
+    cursor: not-allowed;
+  }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+  @media (max-width: 768px) {
+    .chat-container {
+      max-width: 90%;
+      margin: 20px auto;
+    }
+    .chat-input button {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  .chat-container {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }  
